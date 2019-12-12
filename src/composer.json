@@ -1,0 +1,12 @@
+{
+    "name": "tuanha/auth-api-gateway",
+    "description": "A package login with service auth",
+    "authors": [
+        {
+            "name": "Hoang Tuan",
+            "email": "tuanha@viralsoft.vn"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
