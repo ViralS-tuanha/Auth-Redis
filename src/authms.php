@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'auth_domain' => env('SERVER_AUTH', 'http://msauth.dxmb.vn/'),
+    'auth_domain' => env('SERVER_AUTH', 'http://devauth.dxmb.vn/'),
     'call_back' => env('CALL_BACK', 'api/v1/login-back'),
     'prefix_cache' => env('AUTH_CACHE_PREFIX', 'TAOLE'),
     'login_uri' => env('LOGIN_URL', 'api/v1/user/auth/get-token'),

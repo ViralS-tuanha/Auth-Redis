@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace  TuanHA\AuthApiGateway;
 
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 
-class AuthenticateRedis
+class Authenticate
 {
     /**
      * Get the path the user should be redirected to when they are not authenticated.

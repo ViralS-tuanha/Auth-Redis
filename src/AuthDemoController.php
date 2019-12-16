@@ -13,7 +13,8 @@ class AuthDemoController extends Controller
 
     public function login()
     {
-        return view('auth.login');
+        $domainAuth = config('authms.auth_domain');
+        return header("Location: ".$domainAuth."login?call_back=". route('login.callback'));
     }
 
     public function callback(Request $request)
