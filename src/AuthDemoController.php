@@ -5,7 +5,7 @@ namespace TuanHA\AuthApiGateway;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
-use App\Traits\ConsumesExternalService;
+use TuanHA\AuthApiGateway\Traits\ConsumesExternalService;
 
 class AuthDemoController extends Controller
 {
