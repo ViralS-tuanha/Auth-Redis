@@ -13,8 +13,7 @@ class AuthDemoController extends Controller
 
     public function login()
     {
-        $domainAuth = config('authms.auth_domain');
-        return header("Location: ".$domainAuth."login?call_back=". route('login.callback'));
+        return view('auth.login');
     }
 
     public function callback(Request $request)
@@ -26,6 +25,7 @@ class AuthDemoController extends Controller
         $data = json_decode($response, true);
         $session_id = session()->getId();
         $session = Redis::get($prefix.':'.$data['data']);
+
         session()->put($session_id, $data['data']);
         return redirect('/home');
     }
@@ -37,7 +37,7 @@ class AuthDemoController extends Controller
         $sessionValue = session()->get($sessionId);
         session()->forget($sessionId);
 //        Redis::command('del', [$prefix.':'.$session_id]);
-        $redis = Redis::set($prefix.':'.$sessionValue, null);
+        $redis = Redis::del($prefix.':'.$sessionValue);
         return redirect('/login');
     }
 }
