@@ -32,6 +32,7 @@ class AuthApiGatewayServiceProvider extends ServiceProvider
 //        $this->publishes([
 //            __DIR__.'/AuthDemoController.php' => base_path('app/Http/Controllers/AuthDemoController.php'),
 //        ], 'public');
+        $this->loadViewsFrom(__DIR__, 'login_customize');
         $this->loadRoutesFrom(__DIR__.'/authRoute.php');
     }
 }

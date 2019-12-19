@@ -13,7 +13,7 @@ class AuthDemoController extends Controller
 
     public function login()
     {
-        return view('auth.login');
+        return view('login_customize::login');
     }
 
     public function callback(Request $request)
