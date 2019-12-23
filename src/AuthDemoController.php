@@ -25,7 +25,6 @@ class AuthDemoController extends Controller
         $data = json_decode($response, true);
         $session_id = session()->getId();
         $session = Redis::get($prefix.':'.$data['data']);
-
         session()->put($session_id, $data['data']);
         return redirect('/home');
     }
@@ -36,7 +35,6 @@ class AuthDemoController extends Controller
         $sessionId = session()->getId();
         $sessionValue = session()->get($sessionId);
         session()->forget($sessionId);
-//        Redis::command('del', [$prefix.':'.$session_id]);
         $redis = Redis::del($prefix.':'.$sessionValue);
         return redirect('/login');
     }
