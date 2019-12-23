@@ -2,24 +2,21 @@
 
 namespace TuanHA\AuthApiGateway\Traits;
 
-use GuzzleHttp\Client;
+use TuanHA\AuthApiGateway\Services\BaseAPIServices;
 
 trait ConsumesExternalService
 {
+    protected $baseService;
+
+    public function __construct(BaseAPIServices $baseService)
+    {
+        $this->baseService = $baseService;
+    }
+
     public function performRequest($baseUri, $method, $requestUrl, $formParams = [], $queryParams = [], $headers = [])
     {
-        $client = new Client([
-            'base_uri' => $baseUri,
-        ]);
-
-        $requestParams = [
-            'json' => $formParams,
-            'query' => $queryParams,
-            'headers' => $headers
-        ];
-
-        $response = $client->request($method, $requestUrl, $requestParams );
-
-        return $response->getBody()->getContents();
+        $data = array_merge($formParams, $queryParams);
+        $response = $this->baseService->callAPI($baseUri . $requestUrl, $method, $headers, $data);
+        return json_encode($response);
     }
 }

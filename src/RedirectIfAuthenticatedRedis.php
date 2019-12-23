@@ -3,10 +3,9 @@
 namespace  TuanHA\AuthApiGateway;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
 
-class RedirectIfAuthenticated
+class RedirectIfAuthenticatedRedis
 {
     /**
      * Handle an incoming request.

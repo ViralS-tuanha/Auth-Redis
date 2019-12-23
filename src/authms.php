@@ -10,4 +10,5 @@ return [
     'confirm_reset_uri' => env('RESET_CONFIRM_URI', 'api/v1/user/auth/password/reset'),
     'profile_uri' => env('PROFILE_URI', 'api/v1/profiles/{id}'),
     'refresh_token' => env('PROFILE_URI', 'api/v1/user/auth/refresh-token'),
+    'token_web_auth' => env('TOKEN_WEB_AUTH', "login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d")
 ];

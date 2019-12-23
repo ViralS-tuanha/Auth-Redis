@@ -26,12 +26,6 @@ class AuthApiGatewayServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/authms.php' => config_path('authms.php'),
         ], 'public');
-//        $this->publishes([
-//            __DIR__.'/AuthenticateRedis.php' =>  base_path('app/Http/Middleware/AuthenticateRedis.php'),
-//        ], 'public');
-//        $this->publishes([
-//            __DIR__.'/AuthDemoController.php' => base_path('app/Http/Controllers/AuthDemoController.php'),
-//        ], 'public');
         $this->loadViewsFrom(__DIR__, 'login_customize');
         $this->loadRoutesFrom(__DIR__.'/authRoute.php');
     }
