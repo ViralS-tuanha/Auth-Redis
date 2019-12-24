@@ -18,11 +18,12 @@ class AuthenticateRedis
     {
         $prefix = config('authms.prefix_cache');
         $domainAuth = config('authms.auth_domain');
+        $loginWeb = config('authms.token_web_auth');
         $sessionId = session()->getId();
         $sessionValue = session()->get($sessionId);
         $session = Redis::get($prefix.':'.$sessionValue);
         $session = unserialize(unserialize($session));
-        if (!isset($session['login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d'])) {
+        if (!isset($session[$loginWeb])) {
             header("Location: ".$domainAuth."login?call_back=". route('login.callback'));
             exit;
         } else {
