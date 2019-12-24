@@ -1,5 +1,5 @@
 {
-    "name": "tuanha/auth-api-gateway",
+    "name": "viral-ms/auth-api-gateway",
     "description": "A package login with service auth",
     "authors": [
         {
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "TuanHA\\AuthApiGateway\\": "src"
+            "ViralMS\\AuthApiGateway\\": "src"
         }
     }
 }

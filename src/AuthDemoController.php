@@ -1,10 +1,10 @@
 <?php
 
-namespace TuanHA\AuthApiGateway;
+namespace ViralMS\AuthApiGateway;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
-use TuanHA\AuthApiGateway\Traits\ConsumesExternalService;
+use ViralMS\AuthApiGateway\Traits\ConsumesExternalService;
 
 class AuthDemoController
 {

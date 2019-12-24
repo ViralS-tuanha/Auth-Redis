@@ -1,6 +1,6 @@
 <?php
 
-namespace  TuanHA\AuthApiGateway;
+namespace  ViralMS\AuthApiGateway;
 
 use Closure;
 use Illuminate\Support\Facades\Redis;

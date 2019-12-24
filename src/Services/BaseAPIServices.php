@@ -1,7 +1,7 @@
 <?php
 
 
-namespace TuanHA\AuthApiGateway\Services;
+namespace ViralMS\AuthApiGateway\Services;
 
 
 class BaseAPIServices
