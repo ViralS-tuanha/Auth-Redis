@@ -23,3 +23,8 @@ REDIS_PORT=6379
 
 ## chạy publish vendor:
 + chạy command: php artisan vendor:publish --provider=TuanHA\AuthApiGateway\AuthApiGatewayServiceProvider
+
+
+## Thay thế middleware Auth trong file Kernel.php ỏ biến $routeMiddleware:
++ 'auth' => \TuanHA\AuthApiGateway\AuthenticateRedis::class,
++ 'guest' => \TuanHA\AuthApiGateway\RedirectIfAuthenticatedRedis::class,
