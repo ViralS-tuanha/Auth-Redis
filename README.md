@@ -18,13 +18,13 @@ REDIS_PORT=6379
 
 ## Sửa các file config cho phù hợp:
 + Thêm vào providers trong file app.php : TuanHA\AuthApiGateway\AuthApiGatewayServiceProvider::class,
-+ Ẩn dòng trong file database:'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
++ Ẩn dòng trong file database.php:'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
 
 
-## chạy publish vendor:
+## Chạy publish vendor:
 + chạy command: php artisan vendor:publish --provider=TuanHA\AuthApiGateway\AuthApiGatewayServiceProvider
 
 
-## Thay thế middleware Auth trong file Kernel.php ỏ biến $routeMiddleware:
+## Thay thế middleware Auth trong file Kernel.php ở biến $routeMiddleware:
 + 'auth' => \TuanHA\AuthApiGateway\AuthenticateRedis::class,
 + 'guest' => \TuanHA\AuthApiGateway\RedirectIfAuthenticatedRedis::class,
