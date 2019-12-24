@@ -15,3 +15,11 @@ REDIS_CLIENT=predis
 REDIS_HOST=127.0.0.1
 REDIS_PASSWORD=null
 REDIS_PORT=6379
+
+## Sửa các file config cho phù hợp:
++ Thêm vào providers trong file app.php : TuanHA\AuthApiGateway\AuthApiGatewayServiceProvider::class,
++ Ẩn dòng trong file database:'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+
+
+## chạy publish vendor:
++ chạy command: php artisan vendor:publish --provider=TuanHA\AuthApiGateway\AuthApiGatewayServiceProvider
