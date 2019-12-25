@@ -1,8 +1,8 @@
 <?php
 
-namespace TuanHA\AuthApiGateway\Traits;
+namespace ViralMS\AuthApiGateway\Traits;
 
-use TuanHA\AuthApiGateway\Services\BaseAPIServices;
+use ViralMS\AuthApiGateway\Services\BaseAPIServices;
 
 trait ConsumesExternalService
 {
