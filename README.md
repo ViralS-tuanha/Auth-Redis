@@ -20,10 +20,10 @@ VD:
 + Ẩn dòng trong file database:`'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),`
 
 
-## chạy publish vendor:
+## Chạy publish vendor:
 + chạy command: `php artisan vendor:publish --provider=ViralMS\AuthApiGateway\AuthApiGatewayServiceProvider`
 
 
-## Thay thế middleware Auth trong file Kernel.php ỏ biến $routeMiddleware:
+## Thay thế middleware Auth trong file Kernel.php ở biến $routeMiddleware:
 + `'auth' => \ViralMS\AuthApiGateway\AuthenticateRedis::class,`
 + `'guest' => \ViralMS\AuthApiGateway\RedirectIfAuthenticatedRedis::class,`
